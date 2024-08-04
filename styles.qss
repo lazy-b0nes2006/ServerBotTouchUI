@@ -1,0 +1,46 @@
+/* General Window Styles */
+QWidget {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Text */
+QLabel, QLineEdit, QTextEdit {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+/* Buttons */
+QPushButton {
+    background: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0, stop: 0 #2a2a2a, stop: 1 #bdbdbd);
+    border: 1px solid #5c5c5c;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0, stop: 0 #3c3c3c, stop: 1 #d6d6d6);
+}
+
+QPushButton:pressed {
+    background: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0, stop: 0 #1a1a1a, stop: 1 #a5a5a5);
+}
+
+/* Tooltips */
+QToolTip {
+    color: #ffffff;
+    background-color: #2a82da;
+    border: 1px solid white;
+}
+
+/* Links */
+QPushButton a {
+    color: #2a82da;
+}
+
+/* Highlighted Text */
+QTextEdit:focus, QLineEdit:focus {
+    background-color: #2a82da;
+    color: #000000;
+}

@@ -36,16 +36,16 @@
      </size>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="homePage">
      <widget class="QWidget" name="horizontalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>0</x>
         <y>10</y>
-        <width>691</width>
-        <height>571</height>
+        <width>1021</width>
+        <height>561</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -62,28 +62,6 @@
         <number>1</number>
        </property>
        <item>
-        <widget class="QPushButton" name="startPushButton">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>START</string>
-         </property>
-         <property name="flat">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QPushButton" name="stopPushButton">
          <property name="enabled">
           <bool>true</bool>
@@ -94,11 +72,45 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
          <property name="text">
           <string>STOP</string>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="startPushButton">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>START</string>
          </property>
          <property name="flat">
           <bool>false</bool>
@@ -116,6 +128,11 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -129,10 +146,10 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>150</y>
-        <width>300</width>
-        <height>300</height>
+        <x>225</x>
+        <y>15</y>
+        <width>550</width>
+        <height>550</height>
        </rect>
       </property>
       <property name="text">
@@ -145,65 +162,17 @@
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>label</zorder>
+     <zorder>horizontalLayoutWidget</zorder>
     </widget>
     <widget class="QWidget" name="goPage">
-     <widget class="QPushButton" name="addItemPushButton">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>504</y>
-        <width>260</width>
-        <height>70</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>ADD</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="removeItemPushBUtton">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>504</y>
-        <width>260</width>
-        <height>70</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>REMOVE</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>780</x>
-        <y>430</y>
-        <width>100</width>
-        <height>100</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px; /* Half of the button's width/height */
-    font-size: 18px; /* Text size */
-}
-
-
-</string>
-      </property>
-      <property name="text">
-       <string>GO</string>
-      </property>
-     </widget>
      <widget class="QScrollArea" name="itemsSelectedScrollArea">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>300</y>
-        <width>520</width>
-        <height>201</height>
+        <x>262</x>
+        <y>10</y>
+        <width>500</width>
+        <height>290</height>
        </rect>
       </property>
       <property name="layoutDirection">
@@ -223,11 +192,100 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>504</width>
-         <height>199</height>
+         <width>484</width>
+         <height>288</height>
         </rect>
        </property>
       </widget>
+     </widget>
+     <widget class="QPushButton" name="homePushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>121</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Home</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="enterDestinationPushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>240</width>
+        <height>260</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Enter Destination</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addItemPushButton">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>320</y>
+        <width>240</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Add Item</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="removeItemPushButton">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>320</y>
+        <width>240</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Remove Item</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="goPushButton">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>250</y>
+        <width>240</width>
+        <height>260</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Go</string>
+      </property>
      </widget>
     </widget>
    </widget>

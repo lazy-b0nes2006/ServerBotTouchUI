@@ -1,6 +1,6 @@
 /* General Window Styles */
 QWidget {
-    background-color: #1a1a1a;
+    background-color: rgba(40, 40, 40, 120);
     color: #ffffff;
 }
 
@@ -12,20 +12,33 @@ QLabel, QLineEdit, QTextEdit {
 
 /* Buttons */
 QPushButton {
-    background: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0, stop: 0 #2a2a2a, stop: 1 #bdbdbd);
+    background: qlineargradient(
+        x1: 0, y1: 1, 
+        x2: 0, y2: 0, 
+        stop: 0 rgba(42, 42, 42, 150),  /* Dark color with transparency */
+        stop: 1 rgba(189, 189, 189, 150));  /* Light color with transparency */
     border: 1px solid #5c5c5c;
     color: white;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 QPushButton:hover {
-    background: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0, stop: 0 #3c3c3c, stop: 1 #d6d6d6);
+    background: qlineargradient(
+        x1: 0, y1: 1, 
+        x2: 0, y2: 0, 
+        stop: 0 rgba(60, 60, 60, 150),  /* Slightly lighter for hover effect with transparency */
+        stop: 1 rgba(214, 214, 214, 150));  /* Lighter color for hover with transparency */
 }
 
 QPushButton:pressed {
-    background: qlineargradient(x1: 0, y1: 1, x2: 0, y2: 0, stop: 0 #1a1a1a, stop: 1 #a5a5a5);
+    background: qlineargradient(
+        x1: 0, y1: 1, 
+        x2: 0, y2: 0, 
+        stop: 0 rgba(26, 26, 26, 150),  /* Slightly darker for pressed effect with transparency */
+        stop: 1 rgba(165, 165, 165, 150));  /* Darker color for pressed with transparency */
 }
+
 
 /* Tooltips */
 QToolTip {

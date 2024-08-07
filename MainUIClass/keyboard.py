@@ -77,13 +77,12 @@ class Keyboard(QWidget):
             self.line_edit.setText(current_text + key)
 
     def filter_dropdown(self):
-        # Simulated menu list for demonstration
         current_text = self.line_edit.text()
         if current_text:
             self.dropdown.clear()
             filtered_items = [item for item in menu if current_text.lower() in item.lower()]
             self.dropdown.addItems(filtered_items)
-            # self.dropdown.setVisible(True)
+            self.dropdown.setVisible(True)
         else:
             self.dropdown.setVisible(False)
 

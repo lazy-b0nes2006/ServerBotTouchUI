@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QPushButton, QWidget, QLab
 from MainUIClass.keyboard import Keyboard
 
 class MainUIClass(QtWidgets.QMainWindow, mainGUI.Ui_MainWindow):
-
     def __init__(self, parent=None):
         super(MainUIClass, self).__init__(parent)
         self.setupUi(self)
@@ -19,6 +18,12 @@ class MainUIClass(QtWidgets.QMainWindow, mainGUI.Ui_MainWindow):
         # Add the keyboard and input label to the keyboardPage
         self.keyboardVlayout.addWidget(self.keyboard)
         self.keyboard.setVisible(False)
+
+        # Initialize the layout for items in the scroll area
+        self.scroll_layout = QVBoxLayout()
+        self.items_widget = QWidget()
+        self.items_widget.setLayout(self.scroll_layout)
+        self.itemsSelectedScrollArea.setWidget(self.items_widget)
 
     def apply_stylesheet(self):
         with open("styles.qss", "r") as file:
@@ -46,14 +51,32 @@ class MainUIClass(QtWidgets.QMainWindow, mainGUI.Ui_MainWindow):
             self.keyboard.dropdown.setVisible(False)
 
     def update_display(self, text):
-        if (text.isdigit() and self.function == 'enterDestination') or self.function == 'addItem':
-            self.keyboardText = text
-            if self.function == 'addItem':
-                pass
-            elif self.function == 'enterDestination':
-                self.tableNumberLabel.setText(text)
-            self.keyboard.line_edit.setText("")
+        self.keyboardText = text
+        if text.isdigit() and self.function == 'enterDestination':
+            self.tableNumberLabel.setText(text)
             self.stackedWidget.setCurrentWidget(self.goPage)
             self.keyboard.first_press = True
-        else:
-            self.keyboard.line_edit.setText("")
+        elif self.function == 'addItem':
+            self.add_item_to_scroll_area(text)
+            self.stackedWidget.setCurrentWidget(self.goPage)
+            self.keyboard.first_press = True
+        self.keyboard.line_edit.setText("")
+
+    def add_item_to_scroll_area(self, item_name):
+        # Check if the item is already in the scroll area
+        for i in range(self.scroll_layout.count()):
+            item_layout = self.scroll_layout.itemAt(i).layout()
+            if item_layout and item_layout.itemAt(0).widget().text() == item_name:
+                # Update the quantity
+                quantity_label = item_layout.itemAt(1).widget()
+                current_quantity = int(quantity_label.text())
+                quantity_label.setText(str(current_quantity + 1))
+                return
+
+        # If the item is not present, add a new row with item name and quantity
+        item_layout = QHBoxLayout()
+        item_label = QLabel(item_name)
+        quantity_label = QLabel("1")
+        item_layout.addWidget(item_label)
+        item_layout.addWidget(quantity_label)
+        self.scroll_layout.addLayout(item_layout)

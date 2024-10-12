@@ -82,7 +82,7 @@ class Keyboard(QWidget):
             self.dropdown.clear()
             filtered_items = [item for item in menu if current_text.lower() in item.lower()]
             self.dropdown.addItems(filtered_items)
-            self.dropdown.setVisible(True)
+            # self.dropdown.setVisible(True)
         else:
             self.dropdown.setVisible(False)
 
